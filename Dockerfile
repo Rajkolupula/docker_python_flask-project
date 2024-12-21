@@ -1,8 +1,9 @@
-FROM node:16
+FROM python:3.6
 MAINTAINER veera "veera.narni232@gmail.com"
 COPY . /app
 WORKDIR /app
-RUN npm install -r package.json
+RUN pip install -r requirements.txt
 #ENTRYPOINT ["python"]
 EXPOSE 5000
-CMD ["npm", "start"]
+CMD ["python", "app.py"]
+
