@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: python-container
-          image: rajukolupula/python-app:latest
+          image: rajukolupula/python-repo:latest
           ports:
             - containerPort: 5000
 ---
