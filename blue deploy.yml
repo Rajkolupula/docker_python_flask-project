@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: flask
-          image: nginx
+          image: httpd
           ports:
             - containerPort: 5000
          
