@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: flask
-          image: rajukolupula/python-repo:latest
+          image: <+artifact.image>
           ports:
             - containerPort: 5000
          
