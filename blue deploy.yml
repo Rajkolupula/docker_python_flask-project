@@ -19,6 +19,6 @@ spec:
     spec:
       containers:
         - name: my-app-container
-          image: nginx:latest  # Harness will substitute this
+          image: rajukolupula/python-repo  # Harness will substitute this
           ports:
-            - containerPort: 8080
+            - containerPort: 5000
