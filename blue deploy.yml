@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: flask-blue
+  name: flask-green
 spec:
   replicas: 2
   selector:
