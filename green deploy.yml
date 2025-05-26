@@ -1,25 +1,20 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: green-myapp
-  namespace: default
+  name: flask-deployment
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: myapp
-      replica: green
+      app: flask
   template:
     metadata:
       labels:
-        app: myapp
-        replica: green
+        app: flask
     spec:
       containers:
-        - name: myapp
-          image: httpd
-          ports:
-            - name: http
-              containerPort: 80
-        
+      - name: flask
+        #image: sukanya996/bule-green:green-46
+        image: rajukolupula/python-repo  # Use Harness variable if needed
+        ports:
+        - containerPort: 5000
