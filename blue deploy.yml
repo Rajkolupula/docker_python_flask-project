@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: flask
-          image: "<+artifacts.primary.image>"
+          image: nginx
           ports:
             - containerPort: 5000
          
