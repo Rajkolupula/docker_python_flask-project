@@ -11,5 +11,5 @@ spec:
     version: green  # Harness switches this between blue/green
   ports:
     - protocol: TCP
-      port: 80
+      port: 5000
       targetPort: 5000
