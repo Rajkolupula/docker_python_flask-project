@@ -1,21 +1,27 @@
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: python-app-green
+  name: my-app-green
+  annotations:
+    harness.io/direct-apply: "true"
+  labels:
+    app: my-app
+    version: green
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: python-app
+      app: my-app
       version: green
   template:
     metadata:
       labels:
-        app: python-app
+        app: my-app
         version: green
     spec:
       containers:
-      - name: python-app
-        image: rajukolupula/python-repo:newversion
-        ports:
-        - containerPort: 5000
+        - name: my-app-container
+          image: rajukolupula/python-repo
+          ports:
+            - containerPort: 5000
