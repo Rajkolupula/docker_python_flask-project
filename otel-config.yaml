@@ -2,21 +2,20 @@ receivers:
   otlp:
     protocols:
       grpc:
-
-exporters:
-  debug:
-
-  otlp:
-    endpoint: jaeger:14250
-    tls:
-      insecure: true
+      http:
 
 processors:
   batch:
+
+exporters:
+  googlecloud:
+    project: project-8bfb738f-64f4-4a50-807
+
+  debug: {}
 
 service:
   pipelines:
     traces:
       receivers: [otlp]
       processors: [batch]
-      exporters: [debug, otlp]
+      exporters: [googlecloud, debug]
