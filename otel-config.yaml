@@ -1,21 +1,29 @@
-receivers:
-  otlp:
-    protocols:
-      grpc:
-      http:
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: otel-collector-config
+  namespace: observability
 
-processors:
-  batch:
+data:
+  otel-config.yaml: |
+    receivers:
+      otlp:
+        protocols:
+          grpc:
+          http:
 
-exporters:
-  googlecloud:
-    project: project-8bfb738f-64f4-4a50-807
+    processors:
+      batch:
 
-  debug: {}
+    exporters:
+      googlecloud:
+        project: project-8bfb738f-64f4-4a50-807
 
-service:
-  pipelines:
-    traces:
-      receivers: [otlp]
-      processors: [batch]
-      exporters: [googlecloud, debug]
+      debug: {}
+
+    service:
+      pipelines:
+        traces:
+          receivers: [otlp]
+          processors: [batch]
+          exporters: [googlecloud, debug]
